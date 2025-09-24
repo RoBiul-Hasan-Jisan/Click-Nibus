@@ -4,7 +4,7 @@ import ProductCard from "../components/ProductCard";
 const justForYou = [
   { id: 1, name: "Laptop Backpack", price: "$39", img: "/images/j1.jpg" },
   { id: 2, name: "Bluetooth Speaker", price: "$59", img: "/images/j2.jpeg" },
-  { id: 3, name: "Sneakers", price: "$89", img: "/images/j3.jpeg" },
+  { id: 3, name: "Sneakers", price: "$89", img: "/images/j3.jpg" },
   { id: 4, name: "Coffee Maker", price: "$129", img: "/images/j4.jpeg" },
   { id: 5, name: "Laptop Backpack", price: "$39", img: "/images/j1.jpg" },
   { id: 6, name: "Bluetooth Speaker", price: "$59", img: "/images/j2.jpeg" },

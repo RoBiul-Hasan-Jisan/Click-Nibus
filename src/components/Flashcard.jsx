@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Star, Heart, ShoppingCart, X } from "lucide-react";
 
-export default function ProductCard({
+export default function Flashcard({
   id,
   name,
   price,
@@ -72,7 +72,7 @@ export default function ProductCard({
         {/* Info Section */}
         <div className="p-4 flex flex-col gap-2">
           <Link
-            to={`/product/${id}`}
+            to={`/flashsale/${id}`}
             className="font-semibold text-sm md:text-base text-gray-900 line-clamp-2 hover:text-pink-600 transition-colors"
           >
             {name}
