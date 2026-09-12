@@ -1,0 +1,56 @@
+import { Category } from "@/types";
+import React from "react";
+import Title from "../Title";
+import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
+import { Label } from "../ui/label";
+
+interface Props {
+  categories: Category[];
+  selectedCategory?: string | null;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<string | null>>;
+}
+
+const CategoryList = ({
+  categories,
+  selectedCategory,
+  setSelectedCategory,
+}: Props) => {
+  return (
+    <div className="w-full bg-white rounded-xl border border-black/[0.06] p-5">
+      <Title className="text-base font-bold text-darkColor mb-1">Product Categories</Title>
+      <RadioGroup value={selectedCategory || ""} className="mt-2 space-y-1">
+        {categories?.map((category) => (
+          <div
+            onClick={() => {
+              setSelectedCategory(category?.slug as string);
+            }}
+            key={category?._id}
+            className="flex items-center space-x-2 hover:cursor-pointer"
+          >
+            <RadioGroupItem
+              value={category?.slug as string}
+              id={category?.slug}
+              className="rounded-sm"
+            />
+            <Label
+              htmlFor={category?.slug}
+              className={`${selectedCategory === category?.slug ? "font-semibold text-shop_dark_green" : "font-normal"}`}
+            >
+              {category?.name}
+            </Label>
+          </div>
+        ))}
+      </RadioGroup>
+      {selectedCategory && (
+        <button
+          onClick={() => setSelectedCategory(null)}
+          className="text-sm font-medium mt-2 underline underline-offset-2 decoration-[1px] hover:text-shop_dark_green hoverEffect text-left"
+        >
+          Reset selection
+        </button>
+      )}
+    </div>
+  );
+};
+
+export default CategoryList;
